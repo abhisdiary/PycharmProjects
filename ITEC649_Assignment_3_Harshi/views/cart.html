@@ -1,0 +1,39 @@
+% rebase('base.html')
+<h1>{{title}}</h1>
+<ul class="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/category/men">Men</a></li>
+    <li><a href="/category/women">Women</a></li>
+    <ul class="account-menu">
+        <li><a href="#">My Account</a></li>
+    </ul>
+</ul>
+<div class="content">
+    %if type(cart) is str:
+    <h1>{{cart}}</h1>
+    % else:
+    <div>
+    <table>
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        % for product in cart:
+        <tr>
+            <td><a href="/product/{{product['id']}}">{{product['name']}}</a></td>
+            <td>{{product['quantity']}}</td>
+            <td>{{product['unit_cost']}}</td>
+        </tr>
+        % end
+        <tr>
+            <td>Total</td><td></td><td>${{total_cost}}</td></tr>
+        </tbody>
+    </table>
+    </div>
+    % end
+</div>

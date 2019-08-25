@@ -1,0 +1,18 @@
+% rebase('base.html')
+<h2>{{!title}}</h2>
+<div class="productlist">
+    % if number > 0:
+    % for item in range(number):
+    <div class="card product">
+        <h2><a class="card-title" href="/product/{{!products[item]['id']}}">{{!products[item]['id']}}</a></h2>
+        <h2><a class="card-title" href="/product/{{!products[item]['id']}}">{{!products[item]['name']}}</a></h2>
+
+        <div class="card-image"><img alt="{{!products[item]['image_url']}} image" src={{!products[item]['image_url']}}></div>
+
+        <div class="card-content inventory">{{!products[item]['inventory']}} in stock</div>
+
+        <div class="card-action">${{!products[item]['unit_cost']}}</div>
+    </div>
+    % end
+    % end
+</div>

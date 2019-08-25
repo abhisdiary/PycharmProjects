@@ -1,0 +1,448 @@
+/*html {*/
+    /*background-color: blue;*/
+/*}*/
+
+/*body {*/
+    /*margin: 0;*/
+/*}*/
+
+/*.content {*/
+    /*width: 80%;*/
+    /*margin: auto;*/
+    /*background-color: pink;*/
+/*}*/
+/*header h1 {*/
+    /*font-family: cursive, sans-serif;*/
+    /*text-align: center;*/
+    /*background-color: #ffcc33;*/
+    /*margin: 0;*/
+    /*padding: 10px;*/
+/*}*/
+
+/*nav {*/
+    /*width: 100%;*/
+    /*height: 50px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*background-color: aquamarine;*/
+/*}*/
+
+/*nav ul {*/
+    /*float: left;*/
+    /*list-style: none;*/
+    /*text-align: center;*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+
+/*nav li {*/
+    /*display: inline-block;*/
+    /*width: 100px;*/
+    /*padding: 15px 5px;*/
+/*}*/
+
+/*nav li:hover {*/
+    /*background-color: red;*/
+/*}*/
+html {
+    font-family: Trebuchet MS, sans-serif;
+    background-color: white;
+}
+/*
+//HARSHITHA REDDY RAJANALA:45546029
+//WED TECHNOLOGY ASSIGNMENT-1
+//HELP REFERENCE:w3school.com
+*/
+
+@viewport {
+    width:auto;
+}
+body {
+    background-color: white;
+    margin:0;
+    padding:0;
+    border : 0;
+    font-size : 100%;
+    vertical-align:baseline;
+
+}
+*{
+    box-sizing:border-box;
+}
+input[type="submit"] {
+    display: inline-block;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.7vw;
+    padding: 0.3vw;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height: 30px;
+}
+
+input[type="number"] {
+    width: 80px;
+    height: 30px;
+}
+
+input[type="submit"] span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+input[type="submit"] span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover span {
+    padding-right: 20px;
+}
+
+input[type="submit"]:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+header{
+    width:100%;
+}
+header h1{
+    z-index: 2;
+    position:fixed;
+    top: -20px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 2.0em;
+    background: whitesmoke;
+    width:100%;
+    color:black;
+    line-height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.menu {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    height: 60px;
+    background: #222;
+    color: white;
+    line-height: 60px;
+    padding-left: 15px;
+}
+.menu li {
+    float: left;
+    list-style: none;
+}
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+.account-menu {
+    z-index: 2;
+    position: fixed;
+    margin: auto;
+    height: 25px;
+    background-color:whitesmoke;
+    line-height: 25px;
+    color: #222;
+    font-size: 100%;
+    width:100%;
+    padding-left: 3%;
+    padding-right: 2%;
+}
+.account-menu ul {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height:20px;
+}
+.account-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 50px;
+}
+.account-menu li {
+    float: left;
+    list-style: none;
+}
+
+.account-menu a {
+    display: block;
+    color: #222;
+    text-decoration: none;
+    margin: 0 10px auto;
+}
+#sale a {
+    color: red;
+    font-size: 130%;
+}
+
+#product-search-form {
+    display: inline-block;
+}
+
+#product-search-form {
+    margin: 110px 0 -90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top:50px;
+}
+
+#product-search-form input {
+    width: 30%;
+    font-size: 17px;
+    padding: 10px;
+    border: 1px solid grey;
+    background: #f1f1f1;
+    float: left;
+    text-transform: capitalize;
+}
+
+.searchbutton {
+    width: 5vw;
+    font-size: 17px;
+    padding: 10px;
+    border: 1px solid grey;
+    background: skyblue;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.searchbutton:hover {
+    background: #f4511e;
+}
+
+#promo {
+    z-index: 2;
+    position: absolute;
+    margin: 0px 0px 0 0;
+    background: white;
+    color: #222;
+    font-size: 100%;
+}
+
+#promo ul {
+    position:fixed;
+    background-color: whitesmoke;
+    right: 0;
+    top: 0;
+    margin-right: 0;
+    margin-top: 70px;
+}
+
+#promo {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#promo li {
+}
+
+#promo a {
+    display:list-item;
+    justify-content: right;
+    color: #222;
+    text-decoration: none;
+}
+
+.content {
+    padding-top: 100px;
+    margin: 0px auto;
+    width: 85%;
+}
+
+.inventory, .cost {
+    display: inline-block;
+    padding: 8px;
+}
+
+.featured h2 {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:firebrick;
+    line-height: 40px;
+}
+
+.featured .description {
+    text-align: center;
+}
+
+.featured img {
+    height: auto;
+    max-width: 60%;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-detail .inventory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.product-detail .cost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.product-detail .cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#special-offer a {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#special-offer p {
+    text-align: center;
+    color: white;
+    width: 100%;
+    line-height: 30px;
+    background: #821763;
+}
+
+.productlist .inventory {
+    float: left;
+}
+
+.productlist .cost {
+    float: right;
+}
+
+.productlist form {
+    float: left;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 0 6px;
+    /*float: left;*/
+    width: 33.33333%;
+}
+
+.product:hover {
+    border: 1px solid #777;
+}
+
+.product h2 {
+    font-size: 1vw;
+}
+
+.product a, .product h2 {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:firebrick;
+}
+
+.product h2 a:hover {
+    color: #f4511e;
+}
+
+.product img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.product .cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.product input[type="number"] {
+    max-width: 35px;
+    margin-top: 0.5vw;
+    height: 1.5vw;
+}
+
+.product input[type="submit"] {
+    max-width: 80px;
+    height: 1.5vw;
+}
+
+#promotional-text {
+    margin: 10px auto;
+    border: 1px solid gray;
+    padding: 0px;
+    text-indent: 50px;
+    text-align: center;
+    letter-spacing: 0px;
+    float: left;
+}
+
+#promotional-text a {
+    text-decoration:none;
+    color:darkgoldenrod;
+}
+
+footer {
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    float: left;
+    color: #e8a873;
+}
+footer p, #signupform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.social ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+}
+
+.social li a {
+    text-decoration: none;
+    color: #e8a873;
+}
+

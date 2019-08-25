@@ -1,0 +1,31 @@
+% rebase('base.html')
+
+<!--<ul class="account-menu">-->
+    <!--&lt;!&ndash;<li><a href="/">My Account</a></li>&ndash;&gt;-->
+    <!--<li><a href="/cart">View Cart</a></li>-->
+<!--</ul>-->
+<ul class="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <ul class="account-menu">
+        <li><a href="#">My Account</a></li>
+        <li><a href="/cart">View Cart</a></li>
+    </ul>
+</ul>
+<div class="content">
+    %if type(products) is str:
+    <h1>{{products}}</h1>
+    %else:
+    <div class="productlist">
+     <div class="product">
+     % for product in products:
+         <h2><a href="/product/{{product['id']}}">{{product["name"]}}</a></h2>
+         <div class="image"><img src={{product["image_url"]}} alt={{product["name"]}}></div>
+         <div class="inventory">{{product["inventory"]}} in stock</div>
+         <div class="cost">${{product["unit_cost"]}}</div>
+         <br>
+     % end
+     </div>
+    </div>
+</div>
+%end

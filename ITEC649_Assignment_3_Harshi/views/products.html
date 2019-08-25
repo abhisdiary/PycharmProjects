@@ -1,0 +1,31 @@
+% rebase('base.html')
+
+<ul class="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/category/men">Men</a></li>
+    <li><a href="/category/women">Women</a></li>
+    <ul class="account-menu">
+        <li><a href="#">My Account</a></li>
+        <li><a href="/cart">View Cart</a></li>
+    </ul>
+</ul>
+<div class="content">
+    <h1>{{product["name"]}}</h1>
+    <div>
+        <div class="image"><img src={{product["image_url"]}} alt={{product["name"]}}></div>
+    </div>
+    <div>
+        <ul>
+            <li>Cost: ${{product["unit_cost"]}}</li>
+            <li>Inventory: {{product["inventory"]}}</li>
+        </ul>
+    </div>
+    <p>{{!product["description"]}}</p><p></p>
+    <form action="/cart" method=POST>
+        <!---Quantity cannot exceed inventory of product--->
+        <input name="quantity" type="number" value="1" min="0">
+        <input name="product" type="hidden" value="{{!product['id']}}">
+        <input name="submit" type="submit" value="Add to Cart">
+    </form>
+</div>

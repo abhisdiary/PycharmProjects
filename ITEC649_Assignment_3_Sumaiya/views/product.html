@@ -1,0 +1,20 @@
+% rebase('base.html')
+
+<h1>{{products[1]}}</h1>
+
+<div>
+    <img src="{{products[4]}}" alt="{{products[1]}} image">
+</div>
+<div>
+    <ul>
+        <li>Cost: ${{products[5]}}</li>
+        <li>Inventory: {{products[6]}}</li>
+    </ul>
+</div>
+{{!products[2]}}
+<form action="/cart" method="POST">
+    <!---Quantity cannot exceed inventory of product--->
+    <input name="quantity" type="number" value="1" min="0">
+    <input name="product" type="hidden" value={{products[0]}}>
+    <input name="submit" type="submit" value="Add to Cart">
+</form>

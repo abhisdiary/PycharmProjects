@@ -1,0 +1,817 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQEFVlVACwQAUVBSDwM="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+    <meta name="google-site-verification" content="pBVbnX6B37p2E1Ty63cNjTODTGgrjKGQv5ne8sOu_Ms" />
+	<!--ADD META TAGS AS NECESSARY. ADD PAGE NAME TO FIRST ITEM IN TITLE TAG. DONT FORGET SITE NAME-->
+	<title>Internetworking and Cyber Security - INC19MSV1 - 2019 Course Handbook - Macquarie University</title>
+
+	<link rel="icon" href="http://handbook.mq.edu.au/2019/mq_templates/global/images/2015/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="http://handbook.mq.edu.au/2019/mq_templates/global/images/2015/favicon.ico"
+		  type="image/x-icon"/>
+
+	<!--2011.04.13: New Global Nav CSS -->
+	<link rel="stylesheet" href="http://handbook.mq.edu.au/2019/mq_templates/global/css/padding_margins.css" type="text/css"
+		  media="screen,print"/>
+	<link rel="stylesheet" href="http://handbook.mq.edu.au/2019/mq_templates/corporate/css/homepage.css" type="text/css"
+		  media="screen,print"/>
+	<link rel="stylesheet" href="http://handbook.mq.edu.au/2019/mq_templates/global/css/styles_2015.css" type="text/css"
+		  media="screen,print"/>
+	<!--End New Global Nav CSS-->
+
+	<!--2011.04.13: New Global Nav Javascript -->
+	<script type="text/javascript" src="http://handbook.mq.edu.au/2019/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="http://handbook.mq.edu.au/2019/js/jquery-ui-1.7.1.custom.min.js"></script>
+	<script type="text/javascript" src="http://handbook.mq.edu.au/2019/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript"
+			src="http://handbook.mq.edu.au/2019/mq_templates/global/includes/js/global_nav_noconflict.js"></script>
+	<!--End New Global Nav Javascript-->
+
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/handbook-views.css" media="screen,print"/>
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/padding_margins.css" media="screen,print"/>
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/handbook-unit.css" media="screen,print"/>
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/handbook-print.css" media="print"/>
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/jquery.cluetip.css" media="screen,print"/>
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/left_nav_menu.css" media="screen,print"/>
+	<!--script src="<//?=url::base(FALSE)?>js/jquery-1.3.2.min.js"></script-->
+	<script src="http://handbook.mq.edu.au/js/jquery.min-1.4.1.js"></script>
+	<script src="http://handbook.mq.edu.au/2019/js/jquery.cookie.js"></script>
+	<script src="http://handbook.mq.edu.au/2019/js/UnitsBy.js"></script>
+	<script src="http://handbook.mq.edu.au/2019/js/2010handbook.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://handbook.mq.edu.au/2019/css/jquery.cluetip.css" media="screen,print"/>
+	<script src="http://handbook.mq.edu.au/2019/js/jquery.cluetip.min.js" type="text/javascript"></script>
+	<script src="http://handbook.mq.edu.au/2019/js/left_nav_menu.js" type="text/javascript"></script>
+
+	<!-- Glossary: Original -->
+	<!--link rel="stylesheet" type="text/css" href="http://www.mq.edu.au/glossary/highlight/jquery.cluetip.css"/-->
+	<!-- script type="text/javascript" src="http://www.mq.edu.au/glossary/highlight/jquery.cluetip.js"></script-->
+	<!-- script type="text/javascript" src="http://www.mq.edu.au/glossary/highlight/glossaryhighlight.js"></script-->
+	<!--2011.01.06: New Global Nav JavaScript -->
+	<script type="text/javascript"
+			src="http://handbook.mq.edu.au/2019/mq_templates/global/includes/js/jquery.bgiframe.js"></script>
+
+		
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			//Set default open/close settings
+			$('.acc_container').hide(); //Hide/close all containers
+			$('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+
+//On Click
+			$('.acc_trigger').click(function () {
+				if ($(this).next().is(':hidden')) { //If immediate next container is closed...
+					$('.acc_trigger').removeClass('active').next().slideUp(); //Remove all "active" state and slide up the immediate next container
+					$(this).toggleClass('active').next().slideDown(); //Add "active" state to clicked trigger and slide down the immediate next container
+				}
+				return false; //Prevent the browser jump to the link anchor
+			});
+		});
+	</script>
+	<!--End New Global Nav JavaScript -->
+
+</head>
+<body id="department" class="two-column">
+<!--ADD CLASS 'TWO-COLUMN' TO BODY TAG TO REMOVE RIGHT COLUMN (COLUMN-3) FROM LAYOUT OR 'ONE-COLUMN' TO REMOVE NAV(LEFT) AND RIGHT COLUMN-->
+<p class="hide"><a href="#column-2">Skip to Content</a></p>
+<!--BEGIN NO CHANGE SECTION-->
+<div id="wrapper">
+	<div id="banner">
+		<div id="logo">
+			<h1>Macquarie University</h1>
+			<a href="http://www.mq.edu.au"><img src="http://handbook.mq.edu.au/2019/mq_templates/global/images/logo.png" width="192"
+												height="64" title="Macquarie University, Sydney"
+												alt="Macquarie University, Sydney"/></a></div>
+		<!--/logo-->
+		<div id="banner-nav">
+			<div id="nav-top">
+				<ul>
+					<li><a href="http://handbook.mq.edu.au/" accesskey="b"
+						   title="Macquarie handbook, Access Key - b">Handbook</a>&nbsp;|
+					</li>
+					<li><a href="http://www.mq.edu.au/on_campus/library/" accesskey="l"
+						   title="Library page, Access Key - l">Library</a>&nbsp;|
+					</li>
+					<li><a href="http://www.mq.edu.au/on_campus/maps/" accesskey="m" title="Campus map, Access Key - m">Campus
+							Map</a>&nbsp;|
+					</li>
+					<li><a href="http://www.mq.edu.au/contact/" accesskey="c" title="Contact information, Access Key - c">Macquarie
+							Contacts</a></li>
+				</ul>
+			</div>
+			<!--/nav-top-->
+			<div class="break"></div>
+			<div id="search-box"><!-- start search area -->
+				<form action="http://www.mq.edu.au/search/search-results.html" id="cse-search-box"><input type="hidden"
+																										  name="cx"
+																										  value="018228073491741698199:bz06o_gto80"/>
+					<input type="hidden" name="cof" value="FORID:9"/> <input type="hidden" name="ie" value="UTF-8"/> <label
+						for="search" class="hide">search</label>
+					<input type="text" name="q" id="search"/> <input alt="Search" type="submit" value="Search"
+																	 class="button" name="sa"/></form>
+				<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box"></script>
+				<!-- end search area --></div>
+			<!--/search-->
+			<div class="break"></div>
+			<div id="nav-tabs">
+				<ul class="public">
+					<li id="current"><a href="http://www.mq.edu.au/">Macquarie Home</a></li>
+					<li><a href="http://students.mq.edu.au/">Students</a></li>
+					<li><a href="http://staff.mq.edu.au/">Staff</a></li>
+				</ul>
+			</div>
+			<!--/nav-tabs--></div>
+		<!--/banner-nav--></div>
+	<!--/banner-->
+	<div>
+		<!-- start global nav -->
+
+ <script>
+ dataLayer = [];
+ </script>
+ <!-- Google Tag Manager -->
+ <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MQZTHB"
+ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+ '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+ })(window,document,'script','dataLayer','GTM-MQZTHB');</script>
+ <!-- End Google Tag Manager -->
+
+ <!-- Marketo Munchkin -->
+ <script type="text/javascript">
+ document.write(unescape("%3Cscript src='//munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script>Munchkin.init('011-UBX-120');</script>
+ <!-- End Marketo Munchkin -->
+
+<div class="globalnav">
+  <div id="container">
+    <div id="mainNavBar"  class="globalnavbg">
+      <!--    <div id="header"></div>-->
+      <ul id="topnav">
+        <li class="first"> <a class="nav_first" href="http://mq.edu.au/study.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study']);"><span class="nav_text_nowrap">Study</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://courses.mq.edu.au/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/Find_a_course/']);">Find a course</a></li>
+              <li><a href="http://mq.edu.au/study/undergraduate/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/Undergraduate']);">Undergraduate</a></li>
+              <li><a href="http://mq.edu.au/study/postgraduate/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/Postgraduate']);">Postgraduate</a></li>
+              <li><a href="http://mq.edu.au/study/international/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/International_Students']);">International students</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_third" href="http://www.mq.edu.au/international.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International']);"><span class="nav_text_nowrap">International</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.mq.edu.au/future_students/international/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International/Future_Students']);">Future students</a></li>
+              <li><a href="http://www.mq.edu.au/international/research/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International/Postgraduate_Research']);">Postgraduate research</a></li>
+			  <li><a href="http://www.mq.edu.au/international/information_for_partners/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International/Information_for_Partners']);">Information for partners</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_fourth" href="http://www.mq.edu.au/research.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research']);"><span class="nav_text_nowrap">Research</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.research.mq.edu.au/about/research_office/research_strengths" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Strengths']);">Research strengths</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_@_macquarie/all_research_centres_at_macquarie_university" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Centres_Groups']);">Centres and groups</a></li>
+              <li><a href="http://www.hdr.mq.edu.au/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Higher_Degree_Research']);">Higher degree research</a></li>
+              <li><a href="http://www.mq.edu.au/newsroom/find-an-expert/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Find_an_Expert']);">Find an expert</a></li>
+              <li><a href="http://www.hdr.mq.edu.au/information_about/supervision" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Find_a_Supervisor']);">Find a supervisor</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_@_macquarie/cores" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Join_Us']);">Join us</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_commercialisation" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Commercialisation']);">Research commercialisation</a></li>
+              <li><a href="http://www.mq.edu.au/research/era/index.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/ERA_World_leading_research']);">ERA - world leading research</a></li>
+              <li><a href="http://www.researchonline.mq.edu.au/vital/access/manager/Index" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Publications']);">Research publications</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_office" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Contacts']);">Research contacts</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_fifth" href="http://www.mq.edu.au/on_campus.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus']);"><span class="nav_text_nowrap">On campus</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.students.mq.edu.au/support/accommodation/home/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Accommodation']);">Accommodation</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/catering_and_venue_hire/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Catering_Venue_Hire']);">Catering and venue hire</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/childcare/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Childcare']);">Childcare</a></li>
+              <li><a href="http://www.mq.edu.au/clinics/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Clinics']);">Clinics</a></li>
+              <li><a href="http://mq.edu.au/on_campus/diversity_and_inclusion/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Diversity_and_Inclusion']);">Diversity and inclusion</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/food_and_shopping/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Food_Shopping']);">Food and shopping</a></li>
+              <li><a href="http://www.mq.edu.au/transport/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Getting_to_Macquarie']);">Getting to Macquarie</a></li>
+              <li><a href="http://www.muh.org.au/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Hospital']);">Hospital</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/information_technology" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Information_Technology']);">Information technology</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/library/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Library']);">Library</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/maps/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Maps']);">Maps</a></li>
+              <li><a href="http://www.mq.edu.au/museums/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Museums_Collections']);">Museums and collections</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/project_updates/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Project_Updates']);">Project updates</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/security/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Security']);">Security</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/sport_and_recreation/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Sport_Recreation']);">Sport and recreation</a></li>
+              <li><a href="http://city.mq.edu.au" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/City_Campus']);">City Campus</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_sixth" href="http://www.mq.edu.au/about_us.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us']);"><span class="nav_text_nowrap">About us</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.mq.edu.au/about_us/university_profile" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/University_Profile']);">University profile</a></li>
+              <li><a href="http://www.mq.edu.au/about/how_mq_works/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/How_Macquarie_Works']);">Governance and leadership</a></li>
+              <li><a href="http://www.mq.edu.au/about_us/strategy_and_initiatives/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Strategy_Initiatives']);">Strategy and initiatives</a></li>
+              <li><a href="http://www.mq.edu.au/about/faculties.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Faculties_Departments']);">Faculties and departments</a></li>
+              <li><a href="http://www.mq.edu.au/about/offices.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Offices_Units']);">Offices and units</a></li>
+              <li><a href="http://www.mq.edu.au/about_us/our_campuses/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Our_Campuses']);">Our campuses</a></li>
+              <li><a href="http://www.mq.edu.au/about_us/campus_master_plan/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Master_Plan']);">Master Plan</a></li>
+              <li><a href="http://www.mq.edu.au/newsroom/control.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/News']);">News</a></li>
+              <li><a href="http://www.mq.edu.au/about/events" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Events']);">Events</a></li>
+              <li><a href="http://www.mq.edu.au/about/jobs/index.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Job_Opportunities']);">Job opportunities</a></li>
+              <li><a href="http://www.mq.edu.au/about/calendar.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Important_Dates']);">Important dates</a></li>
+              <li><a href="http://www.mq.edu.au/about/contacts.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Contact_Us']);">Contact us</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_seventh" href="http://www.mq.edu.au/alumni.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Alumni_Supporters']);"><span class="nav_text_wrap">Alumni and supporters</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.alumni.mq.edu.au/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Alumni_Supporters/Alumni']);">Alumni</a></li>
+              <li><a href="http://www.mq.edu.au/supporting/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Alumni_Supporters/Supporting_Macquarie']);">Supporting Macquarie</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="last"> <a class="nav_eighth" href="http://www.mq.edu.au/business_community.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community']);"><span class="nav_text_wrap">Business and community</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.mq.edu.au/business_and_community/consultants_and_contractors/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Consultants_Contractors']);">Consultants and contractors</a></li>
+              <li><a href="http://mq.edu.au/business_and_community/employers" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Employers']);">Employers</a></li>
+              <li><a href="http://www.mq.edu.au/business_and_community/industry_partnerships" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Industry_Partnerships']);">Industry partnerships</a></li>
+              <li><a href="http://www.accommodation.mq.edu.au/landlords" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Landlords']);">Landlords</a></li>
+              <li><a href="http://www.mq.edu.au/newsroom/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Media']);">Media</a></li>
+              <li><a href="http://www.mq.edu.au/business_and_community/professional_and_community_engagement/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Participation_Community_Engagement']);">Professional And Community Engagement</a></li>
+              <li><a href="http://www.mq.edu.au/business_and_community/property_and_facilities/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Property_Facilities']);">Property and facilities</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_commercialisation" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Research_Commercialisation']);">Research commercialisation</a></li>
+              <li><a href="http://www.mq.edu.au/facilities.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Services']);">Services</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <!-- end #mainNavBar -->
+    </div>
+  </div>
+  <div class="break"></div>
+  <!-- end #container -->
+  <!--  <div id="nav_bottom"></div>  -->
+</div>
+<!-- end global nav -->
+	</div>
+	<div class="break"></div>
+	<div id="breadcrumb"><!--UPDATE BREADCRUMB-->
+		<ul>
+			<li><a href="http://www.mq.edu.au/">Macquarie Home</a><span class="breadcrumb-separator">&gt;</span></li>
+			<li><a href="http://handbook.mq.edu.au/2019/">Handbook Home</a><span class="breadcrumb-separator">&gt;</span></li>
+			<!--li><?//=(isset($bcrumbtitle) ? $bcrumbtitle : "");?></li-->
+							<li></li>
+					</ul>
+	</div>
+	<div id="content">
+		<div id="column-1">
+			<!--END NO CHANGE SECTION--> <!--BEGIN LEFT NAV AREA-->
+			<div id="nav-left">
+				<h2 class="sitename"><a href="http://handbook.mq.edu.au/2019/">2019 Handbook</a></h2>
+									<div class="search-container">
+						<form action="http://handbook.mq.edu.au/2019/" method="post">
+							<div class="input-group">
+								<input name="SearchText" type="text" value=""/>
+                <span class="input-group-btn">
+                    <button name="Search" class="btn btn-default" type="submit">Go!</button>
+                </span>
+								<input name="Search" type="hidden" value="1"/>
+							</div>
+						</form>
+					</div>
+												<ul style="margin:0 0 0 0;" id="menu1" class="left_nav_menu">
+					<!--
+<li><a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/FoundationIndex" class="collapsed"><span class="collapsed">Foundation Studies</span></a>
+ -->
+					<!--ul>
+	<li><a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/FoundationPrograms" >Programs<img src="https://www.mq.edu.au/mq_templates/global/images/pdf.gif"></img></a></li>
+    <li><a href="http://handbook.mq.edu.au/2019/Units/FoundationUnits" >Units<img src="https://www.mq.edu.au/mq_templates/global/images/pdf.gif"></img></a></li>
+</ul-->
+					<!--
+                    </li>
+                     -->
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/UndergraduateIndex" class="collapsed"><span class="collapsed">Undergraduate</span></a>
+						<ul>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/UGDegrees" >Degrees
+									and diplomas</a></li>
+
+							<li><a href="http://handbook.mq.edu.au/2019/Majors/UGMajors" >Majors</a></li>
+                            <li><a href="http://handbook.mq.edu.au/2019/Minors/UGMinors" >Minors</a></li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Units/UGByCode"  >Units</a> </li>
+						</ul>
+					</li>
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/GraduateIndex" class="collapsed"><span class="collapsed">Graduate</span></a>
+						<ul>
+							<!--li><a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/GradDegrees" >Diplomas and certificates</a></li>
+	<li><a href="http://handbook.mq.edu.au/2019/Majors/GradMajors" >Majors</a></li>
+	-->
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Units/GDByCode"  >Units</a> 							</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/ResearchIndex" class="collapsed"><span class="collapsed">Research Training</span></a>
+						<ul>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/ResDegrees" >Programs</a>
+							</li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Units/ResByCode"  >Units</a> </li>
+							<!--li><a href="http://handbook.mq.edu.au/2019/ResearchInformation" >Research information</a></li-->
+						</ul>
+					</li>
+
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/PostgraduateIndex" class="expanded"><span class="expanded">Postgraduate</span></a>
+						<ul>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/PGDegrees" >Degrees,
+									diplomas and certificates</a></li>
+							<li><a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/ArticulationNestedAwards" >Articulation and nested awards<img src="https://www.mq.edu.au/mq_templates/global/images/pdf.gif"></img></a></li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Specialisations/PGSpecialisationsByDegrees" class="current open">Specialisations</a>
+							</li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Units/PGByCode"  >Units</a> 							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/MUICIndex" class="collapsed"><span class="collapsed">Macquarie University International College</span></a>
+						<ul>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/MUICPrograms" >Programs</a>
+							</li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Units/MUICUnits" >Units</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/OUAIndex" class="collapsed"><span class="collapsed">Open Universities Australia</span></a>
+						<ul>
+                            <li>
+                                <a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/OUADegrees" >Degrees
+                                    and diplomas</a></li>
+
+                            <li>
+                                <a href="http://handbook.mq.edu.au/2019/Majors/OUAMajors" >Majors</a>
+                            </li>
+                            <li>
+                                                                                            </li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/Units/OUAByCode"  >Units</a> </li>
+						</ul>
+					</li>
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/RulesPolicyIndex" class="collapsed"><span class="collapsed">Rules and Policy</span></a>
+						<!--ul>
+                            <li><a href="http://universitycouncil.mq.edu.au/legislation.html" target="_blank">University Rules</a></li>
+                            <li><a href="http://mq.edu.au/policy/" target="_blank">Policy Central</a></li>
+                            <li><a href="http://mq.edu.au/glossary/search" target="_blank">Glossary</a></li>
+                        </ul-->
+					</li>
+					<li>
+						<a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/OtherIndex" class="collapsed"><span class="collapsed">Other information</span></a>
+						<ul>
+							<!-- li><a href="http://handbook.mq.edu.au/2019/CourseEnquiries/AllAwards" >Course enquiries</a></li-->
+							<li><a target="_blank" href="https://ask.mq.edu.au/splash.php">Course enquiries <img
+										src="http://handbook.mq.edu.au/2019/images/external.png"/></a></li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/StudentInformation/AllStudents" >Student
+									information</a></li>
+							<li><a href="http://www.mq.edu.au/about/calendar.html">Important dates <img src="http://handbook.mq.edu.au/2019/images/external.png" /></a></li>
+							<li>
+								<a href="http://handbook.mq.edu.au/2019/OtherInformation/HandbookArchive" >Handbook
+									archive</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<!--if nav items don't fit 'about' or 'for', leave h2 blank and insert non-breaking space-->
+			</div>
+			<!--/nav-left-->
+		</div>
+		<!--/left-column-->
+		<div id="content-columns">
+			<div id="template-content" class="gutter-left gutter-right">
+				<!--/breadcrumb--> <!--BEGIN CONTENT AREA, COLUMN 2-->
+				<div id="column-2">
+<style>
+    /* override button active color for specialisation view */
+    div.tabMenu button.active {
+        background-color: #666;
+    }
+</style>
+
+<h2>Specialisation: Internetworking and Cyber Security</h2>
+<div class="marg-bottom10">
+    <div class="pad-bottom10"><b>Award(s) to which this specialisation belongs:</b></div>
+    <!--BeginSpecialisationDegrees-->
+<div class="majprog-left pad0">&nbsp;</div>
+<div class="majprog-right normal pad0"><a href="http://handbook.mq.edu.au/2019/DegreesDiplomas/PGDegree/Master+of+Information+Technology">Master of Information Technology</a></div>
+<div class="clear"/></div>
+
+<!--EndSpecialisationDegrees-->
+</div>
+
+<br/>
+<div class="tabMenu">
+    <button class="tabItem defaultTab" onclick="openTab(event, 'mainDetails')" id="mainDetailsButton">SPECIALISATION DETAILS</button>
+    <button class="tabItem" onclick="openTab(event, 'programSpecifications')" id="programSpeButton">PROGRAM SPECIFICATIONS</button>
+    <button class="tabItem" onclick="openTab(event, 'inherentRequirements')" id="inherentReqButton">INHERENT REQUIREMENTS</button>
+</div>
+
+<div class="hb-specialisation-header">
+    <h3>Internetworking and Cyber Security</h3>
+    <h3 class="right">INC19MSV1</h3>
+</div>
+
+<div class="hb-specialisation-view-container" id="ScheduleMajorsView">
+
+    <div class="majprog-left">Department:</div>
+<div class="majprog-right">Department of Computing</div>
+<div class="clear"/></div>
+
+    <div class="majprog-left">Faculty:</div>
+<div class="majprog-right">Faculty of Science and Engineering</div>
+<div class="clear"/></div>
+
+    <div class="hb-hr-red marg0 marg-top10"></div><br/>
+
+    <div id="mainDetails" class="tabContent">
+                    <div class="majprog-left">Admission Requirements:</div><div class="majprog-right">Admission to Master of Information Technology</div>
+<div class="clear"></div>
+            <div class="majprog-left">Study Mode:</div><div class="majprog-right">Full-time, Part-time</div>
+<div class="clear"></div>
+            <div class="majprog-left">Attendance Mode:</div><div class="majprog-right">Internal</div>
+<div class="clear"></div>
+                        <div class="majprog-left">Commencement:</div><div class="majprog-right">	<div class="hb-form-a-r-container hb-removeable" style="margin-left: 0px; ">
+	North Ryde &mdash; Session 1 (February)<br>	</div>
+	<div class="hb-form-a-r-container hb-removeable" style="margin-left: 0px; ">
+	North Ryde &mdash; Session 2 (July)<br>	</div>
+</div>
+<div class="clear"></div>
+        
+        <div class="clear"></div>
+<!--BeginSpecificRequirements-->
+<div class="hb-hr-red marg0 marg-top10"></div>
+        <h4>This specialisation must be completed as part of an award. The general requirements for the award must be satisfied in order to graduate.</h4>
+        <div class="hb-hr-red marg0"></div><div class="pad5"></div>
+         <h4 class="">Requirements for the Specialisation:</h4>
+         <div class="clear"></div>
+         <div class="pad-bottom5">Completion of a minimum of 40 credit points including the following prescribed units:</div>
+         <div class="clear"></div>
+         <h4 class="right"><em>Credit points</em></h4>        <h4><em>800 level </em></h4>
+        <div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC801">Distributed Systems (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC801" ><a href="http://handbook.mq.edu.au/2019/Units/PGUnit/ITEC801">ITEC801</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC803">Advanced Topics in Computer Networks (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC803" ><a href="http://handbook.mq.edu.au/2019/Units/PGUnit/ITEC803">ITEC803</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC850">Network System Design (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC850" ><a href="http://handbook.mq.edu.au/2019/Units/PGUnit/ITEC850">ITEC850</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC851">Mobile Data Networks (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC851" ><a href="http://handbook.mq.edu.au/2019/Units/PGUnit/ITEC851">ITEC851</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC852">Advanced System and Network Security (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC852" ><a href="http://handbook.mq.edu.au/2019/Units/PGUnit/ITEC852">ITEC852</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC855">Security Technologies and Forensic Analysis (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC855" ><a href="http://handbook.mq.edu.au/2019/Units/PGUnit/ITEC855">ITEC855</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="pad5"></div>
+		<div class="pad5"></div>
+		<div class="pad5"></div>
+		<div class="pad5"></div>
+        <h4><em>Additional level </em></h4>
+        <div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC625">Fundamentals of Computer Science (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC625" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC625">ITEC625</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"></div>
+			<div class="col5">4</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC647">Data Communication (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC647" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC647">ITEC647</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hb-view-requirement">
+			<div class="col1">Required</div>
+			<div class="col2"><span class="cps">8</span>cp from </div>
+			<div class="col5">&nbsp;</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC624">Database Systems (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC624" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC624">ITEC624</a></div>
+			<div class="col5">&nbsp;</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC643">Cryptography and Information Security (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC643" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC643">ITEC643</a></div>
+			<div class="col5">&nbsp;</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC649">Web Technology (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC649" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC649">ITEC649</a></div>
+			<div class="col5">&nbsp;</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC657">Data Science (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC657" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC657">ITEC657</a></div>
+			<div class="col5">8</div>
+			<div class="col4 hb-qtip" data-unitcode="ITEC699">Foundation Topic in Computing (4)</div><div class="col3ex">&nbsp;</div>
+
+            <div class="col3 hb-qtip" data-unitcode="ITEC699" ><a href="http://handbook.mq.edu.au/2019/Units/GradUnit/ITEC699">ITEC699</a></div>
+		</div>
+		<div class="clear"></div>
+		<div class="pad5"></div>
+		<div class="clear"></div>
+		<h4 class="pad-top10 left">TOTAL CREDIT POINTS REQUIRED TO SATISFY THIS SPECIALISATION</h4>
+		<div class="pad-top15 right"><b>40</b></div>
+		<div class="clear"></div>
+<!--EndSpecificRequirements-->
+
+    </div>
+
+    <div id="programSpecifications" class="tabContent">
+        <table class="view-info-wide">
+                                                    <tr>
+                    <td class="majprog-left">Overview and Aims of the Program</td>
+                    <td>The MIT (Internetworking and Cyber Security) emphasizes both the theoretical and practical aspects of computer networks and security. This program aims to provide in-depth insight and skills in the specialist areas of internetworking and security, enabling students to meet the growing demand for network and security professionals with capability to design, implement and manage complex network architectures and security systems. <br />
+<br />
+This program aims to:<br />
+• provide a thorough and practical grounding in networking, network design, network and system security, and network management<br />
+• meet the needs of industry for networking and security specialists<br />
+• retrain IT professionals wishing to move into the discipline of networking and security<br />
+• provide a solid foundation for configuring and troubleshooting networking and security technologies in a lab environment. <br />
+Students in this program have the opportunity to undertake in-depth research on specific topics related to computer networks and network security.<br />
+<br />
+The purpose of the program:<br />
+There is a high demand for individuals with advanced knowledge of networks and information security and assurance both in the corporate and in the government sector.  Current trends have heightened the awareness for the growing need for networking and information security specialists. The Master of IT degree program – specialization in (Inter-networking and Cyber Security) is designed to prepare graduates to fill the current and future need for networking and information security professionals to work in a wide variety of capacities and roles to build, manage and protect complex network and system infrastructure.                    </td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Graduate Capabilities</td>
+                    <td><p>The Graduate Capabilities Framework articulates the fundamentals that underpin all of Macquarie’s academic programs. It expresses these as follows:<br /><br /><strong>Cognitive capabilities</strong><br />(K) discipline specific knowledge and skills<br />(T) critical, analytical and integrative thinking<br />(P) problem solving and research capability<br />(I) creative and innovative</p><br />
+<p><strong>Interpersonal or social capabilities</strong><br />(C) effective communication<br />(E) engaged and ethical local and global citizens<br />(A) socially and environmentally active and responsible<br /><br /><strong>Personal capabilities</strong><br />(J) capable of professional and personal judgement and initiative<br />(L) commitment to continuous learning</p>                    </td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Program Learning Outcomes</td>
+                    <td>By the end of this program it is anticipated you should be able to:<br />
+<br />
+1. demonstrate in-depth knowledge and understanding of network and internetwork technologies and security concepts and apply them to solve practical real world problems in a professionally responsible manner (K, P)<br />
+2. synthesise technical knowledge with management and policy aspects of information and cyber security and internetworked system and be able to communicate these ideas to wider management and IT professionals (K, T, P, C)<br />
+3. design, verify, implement and validate secure systems (K, T, P)<br />
+4. design, configure, simulate, implement and trouble shoot complex internetworked systems (K, T, P)<br />
+5. evaluate key network and security technologies and apply them effectively to support the core organisational activities (K, T)<br />
+6. demonstrate critical thinking, and problem-solving ability to tackle complex problems in  internetworking and security (T)<br />
+7. collaborate and communicate with others in a professional setting in both written and oral form (C)<br />
+8. demonstrate appropriate judgement when dealing with team members on a project in a group work situation (J)<br />
+9. engage in independent professional work with a high level of autonomy and accountability (E)<br />
+10. conduct professional work ethically with a high level of integrity and appropriate regard to intellectual property implications (E).</td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Learning and Teaching Methods</td>
+                    <td>A variety of learning and teaching methods will be used to achieve the PLOs highlighted above. Teaching methods will include: <br />
+• a combination of lectures and tutorials: interactive lecture and tutorial sessions including discussions and seminars (K, A, P I)<br />
+• practical laboratory work (K, A, P)<br />
+• student presentations and research report writing (K, A, P, C, E)<br />
+• individual and group based assessment tasks (C, J)<br />
+• self-directed study.<br />
+<br />
+In keeping with the relevant nature of this unit, students are expected to solve realistic problems drawn from industry in tutorials, assessment tasks and final Examination. Learning is reinforced in problem-based tutorial classes, where groups of students work together and apply the knowledge gained from lectures and laboratory work in problem solving. The program places a significant emphasis on developing advanced practical technical skills depending on the nature of the unit studied. The program develops the soft skills expected by employers, such as writing, research and team working skills. Throughout the program students are encouraged to undertake independent reading both to supplement and consolidate what is being taught and to broaden their individual knowledge and understanding of the subject matter. </td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Assessment</td>
+                    <td>The Program Learning Outcomes are tested and assessed during the program using a combination of written examinations, coursework assignments, quizzes, laboratory formal reports and log book, individual and group oral and visual presentations. Throughout the course, students are given formative assessments and feedback on their progress. These help identify any areas of difficulty and give them the time to seek assistance from the teaching staff.</td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Recognition of Prior Learning</td>
+                    <td><p>Macquarie University may recognise prior formal, informal and non-formal learning for the purpose of granting credit towards, or admission into, a program. The recognition of these forms of learning is enabled by the University’s Recognition of Prior Learning (RPL) Policy (see <a href="http://www.mq.edu.au/policy" target="_blank">www.mq.edu.au/policy</a>) and its associated Procedures and Guidelines. The RPL pages contain information on how to apply, links to registers, and the approval processes for recognising prior learning for entry or credit.</p><br />
+<p>Information can be found at: <a href="https://mq.edu.au/rpl" target="_blank">https://mq.edu.au/rpl</a></p></td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Support for Learning</td>
+                    <td><p>Macquarie University aspires to be an inclusive and supportive community of learners where all students are given the opportunity to meet their academic and personal goals. The University offers a comprehensive range of free and accessible student support services which include academic advice, counselling and psychological services, advocacy services and welfare advice, careers and employment, disability services and academic skills workshops amongst others. There is also a bulk billing medical service located on campus.<br /><br />Further information can be found at <a href="http://www.students.mq.edu.au/support/" target="_blank">www.students.mq.edu.au/support/</a><br /><br />Campus Wellbeing contact details:<br />Phone: +61 2 9850 7497<br />Email: campuswellbeing@mq.edu.au<br /><a href="http://www.students.mq.edu.au/support/wellbeing" target="_blank">www.students.mq.edu.au/support/wellbeing</a></p> </td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Program Standards and Quality</td>
+                    <td><p>The program is subject to an ongoing comprehensive process of quality review in accordance with a pre-determined schedule that complies with the Higher Education Standards Framework. The review is overseen by Macquarie University's peak academic governance body, the Academic Senate and takes into account feedback received from students, staff and external stakeholders.</p> </td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Graduate Destinations and Employability</td>
+                    <td>Graduates of this program will find a rewarding career in technology and infrastructure departments of many types of organizations in industry, government, education, telecommunication or the non-profit sector. This is a specialised degree and is usually intended for individuals seeking higher level or more specialized positions as a network administrator or network architect. This program will also will prepare students for a specialized role in security, which covers network security, data security, cyber security, and more. In such roles, individuals are often responsible for creating, maintaining, and enforcing an information security plan for companies. <br />
+<br />
+Career possibilities include the following:<br />
+• network architect<br />
+• solutions architect<br />
+• security specialist<br />
+• network consultant<br />
+• network security consultant.</td>
+                </tr>
+                                        <tr>
+                    <td class="majprog-left">Assessment Regulations</td>
+                    <td><p>This program is subject to Macquarie University regulations, including but not limited to those specified in the Assessment Policy, Academic Honesty Policy, the Final Examination Policy and relevant University Rules. For all approved University policies, procedures, guidelines and schedules visit <a href="http://www.mq.edu.au/policy." target="_blank">www.mq.edu.au/policy.</a></p> </td>
+                </tr>
+                                                    <tr>
+                    <td class="majprog-left">Accreditation</td>
+                    <td>Accreditation will be sought in due course from the Australian Computer Society (<a href="http://www.acs.org.au/" target="_blank">http://www.acs.org.au/</a>)</td>
+                </tr>
+                                </table>
+    </div>
+
+    <div id="inherentRequirements" class="tabContent">
+                    <p><strong>Inherent requirements</strong> are the essential components of a course or program necessary for a student to successfully achieve the core learning outcomes of a course or program. Students must meet the inherent requirements to complete their Macquarie University course or program.<br /><br />Inherent requirements for Macquarie University programs fall under the following categories:<br /><br /><strong>Physical</strong>: The physical inherent requirement is to have the physical capabilities to safely and effectively perform the activities necessary to undertake the learning activities and achieve the learning outcomes of an award.<br /><br /><strong>Cognition</strong>: The inherent requirement for cognition is possessing the intellectual, conceptual, integrative and quantitative capabilities to undertake the learning activities and achieve the learning outcomes of an award.<br /><br /><strong>Communication</strong>: The inherent requirement for communication is the capacity to communicate information, thoughts and ideas through a variety of mediums and with a range of audiences.<br /><br /><strong>Behavioural</strong>: The behavioural inherent requirement is the capacity to sustain appropriate behaviour over the duration of units of study to engage in activities necessary to undertake the learning activities and achieve the learning outcomes of an award.<br /><br />For more information see <a href="https://students.mq.edu.au/study/my-study-program/inherent-requirements" target="_blank">https://students.mq.edu.au/study/my-study-program/inherent-requirements</a></p><br />
+<p><!--[if gte mso 9]> <![endif]--></p><br />
+<p><!--[if gte mso 9]> Normal 0     false false false  EN-US X-NONE X-NONE                         <![endif]--><!--[if gte mso 9]> <![endif]--><!--[if gte mso 10]> /* Style Definitions */  table.MsoNormalTable 	{mso-style-name:"Table Normal"; 	mso-tstyle-rowband-size:0; 	mso-tstyle-colband-size:0; 	mso-style-noshow:yes; 	mso-style-priority:99; 	mso-style-parent:""; 	mso-padding-alt:0cm 5.4pt 0cm 5.4pt; 	mso-para-margin-top:0cm; 	mso-para-margin-right:0cm; 	mso-para-margin-bottom:8.0pt; 	mso-para-margin-left:0cm; 	line-height:107%; 	mso-pagination:widow-orphan; 	font-size:11.0pt; 	font-family:"Calibri",sans-serif; 	mso-ascii-font-family:Calibri; 	mso-ascii-theme-font:minor-latin; 	mso-hansi-font-family:Calibri; 	mso-hansi-theme-font:minor-latin;}  <![endif]--></p>            </div>
+
+    <div class="clear"></div>
+    <div class="hb-hr-red marg-top10"></div>
+</div>
+
+<!-- HANDBOOK-231 Hovertext unit details begins here -->
+<script type="text/javascript" src="http://handbook.mq.edu.au/2019/js/jquery.qtip-1.0.0-rc3.js"></script> <!-- Tooltip Lib -->
+<input type="hidden" id="unitsTooltipDetails" value="{&quot;ITEC801&quot;:{&quot;Prerequisites&quot;:&quot;ITEC647 or admission to MCyberSec with a specialisation in Internetworking&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S2 Evening &lt;br/&gt;&quot;},&quot;ITEC803&quot;:{&quot;Prerequisites&quot;:&quot;ITEC647 or admission to MCyberSec with a specialisation in Internetworking&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S1 Evening &lt;br/&gt;&quot;},&quot;ITEC850&quot;:{&quot;Prerequisites&quot;:&quot;ITEC647 or admission to MCyberSec with a specialisation in Internetworking&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S1 Evening &lt;br/&gt;&quot;},&quot;ITEC851&quot;:{&quot;Prerequisites&quot;:&quot;ITEC647 or admission to MCyberSec with a specialisation in Internetworking&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S2 Evening &lt;br/&gt;&quot;},&quot;ITEC852&quot;:{&quot;Prerequisites&quot;:&quot;ITEC647 or admission to MCyberSec with a specialisation in Internetworking&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S2 Evening &lt;br/&gt;&quot;},&quot;ITEC855&quot;:{&quot;Prerequisites&quot;:&quot;COMP343 or ITEC647 or admission to MCyberSec with a specialisation in Internetworking&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S1 Evening &lt;br/&gt;&quot;},&quot;ITEC625&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MDataSc or MEng or MSc or MScInnovation or GradDipIT&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S1 Day &lt;br/&gt;S2 Day &lt;br/&gt;&quot;},&quot;ITEC647&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MEng or MSc or MScInnovation or GradDipIT&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;COMP247&quot;,&quot;whenOffered&quot;:&quot;S1 Day &lt;br/&gt;S2 Day &lt;br/&gt;&quot;},&quot;ITEC624&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MEngg or MSc or MScInnovation or MDataSci or MScInnovation or GradDipIT\n&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;ISYS224&quot;,&quot;whenOffered&quot;:&quot;S2 Day &lt;br/&gt;&quot;},&quot;ITEC643&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MEng or MSc or MScInnovation or GradDipIT\n&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;COMP343&quot;,&quot;whenOffered&quot;:&quot;S1 Day &lt;br/&gt;&quot;},&quot;ITEC649&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MEng or MSc or MDataSc or MScInnovation or GradDipIT&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;COMP249&quot;,&quot;whenOffered&quot;:&quot;S1 Day &lt;br/&gt;S2 Day &lt;br/&gt;&quot;},&quot;ITEC657&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MEng or MSc or MDataSc or MScInnovation or GradDipIT\n&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S2 Day &lt;br/&gt;&quot;},&quot;ITEC699&quot;:{&quot;Prerequisites&quot;:&quot;Admission to MInfoTech or MEng or MSc or MDataSc or MScInnovation or GradDipIT&quot;,&quot;Corequisites&quot;:&quot;&quot;,&quot;NCCWs&quot;:&quot;&quot;,&quot;whenOffered&quot;:&quot;S1 Day &lt;br/&gt;S2 Day &lt;br/&gt;&quot;}}">
+<script type="text/javascript" src="http://handbook.mq.edu.au/2019/js/qtip-custom.js"></script>
+<div class="hb-qtip-template" id="hb-qtip-template">
+    <h3>2019 Unit Information</h3>
+    <div class="hb-qtip-container">
+        <div class="left">When offered:</div>
+        <div id="qtip-whenOffered" class="right">S1 Day</div>
+    </div>
+    <div class="hb-qtip-container">
+        <div class="left">Prerequisites:</div>
+        <div id="qtip-prerequisites" class="right">Permission of Executive Dean of Faculty</div>
+    </div>
+    <div class="hb-qtip-container">
+        <div class="left">Corequisites:</div>
+        <div id="qtip-corequisites" class="right">None</div>
+    </div>
+    <div class="hb-qtip-container">
+        <div class="left">NCCWs:</div>
+        <div id="qtip-nccws" class="right">HSC Chinese, CHN113, CHN148</div>
+    </div>
+</div>
+<!-- HANDBOOK-231 Hovertext unit details ends here -->
+
+				</div>
+				<!--/column-2--></div>
+			<!--/gutters--></div>
+		<!--/content-area-->
+		<div class="break"></div>
+	</div>
+	<!--/content--></div>
+<!--/wrapper-->
+<div id="wrapper_bottom">
+	<div id="content_bottom">
+		<!-- start global footer -->
+
+		<div id="nav-footer">
+<div class="macquarie_home">
+        <h2><a class="no-border" href="http://www.mq.edu.au/">Macquarie Home</a></h2>
+        <ul>
+          <li>&nbsp;<a href="http://www.mq.edu.au/study.php">Study</a></li>
+          <li>&nbsp;<a href="http://www.mq.edu.au/international.php">International</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://www.mq.edu.au/research.php">Research</a></li>
+          <li>&nbsp;<a href="http://www.mq.edu.au/on_campus.php">On Campus</a></li>
+         </ul>
+         <ul>
+           <li>&nbsp;<a href="http://www.mq.edu.au/about_us.php">About Us</a></li>
+           <li>&nbsp;<a href="http://www.mq.edu.au/alumni.php">Alumni &amp; Supporters</a></li>
+         </ul>
+         <ul>
+           <li>&nbsp;<a href="http://www.mq.edu.au/business_community.php">Business &amp; Community</a></li>
+        </ul>
+        <div class="break"></div>
+      </div>
+      <div class="student_home">
+        <h2><a class="no-border" href="http://students.mq.edu.au">Student Home</a></h2>
+        <ul>
+          <li>&nbsp;<a href="http://students.mq.edu.au/courses/">Courses</a></li>
+          <li>&nbsp;<a href="http://students.mq.edu.au/student_admin/">Student Admin</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://students.mq.edu.au/services_facilities/">Services &amp; Facilities</a></li>
+          <li>&nbsp;<a href="http://students.mq.edu.au/information_technology/">Information Technology</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://students.mq.edu.au/support/">Support</a></li>
+          <li>&nbsp;<a href="http://students.mq.edu.au/opportunities/">Opportunities</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://students.mq.edu.au/campus_life/">Campus Life</a></li>
+          <li>&nbsp;<a href="http://students.mq.edu.au/notices_events/">Notices &amp; Events</a></li>
+        </ul>
+        <div class="break"></div>
+      </div>
+      <div class="staff_home">
+        <h2><a class="no-border" href="http://staff.mq.edu.au">Staff Home</a></h2>
+        <ul>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/human_resources/">Human Resources</a></li>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/services_facilities/">Services &amp; Facilities</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/information_technology/">Information Technology</a></li>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/teaching/">Teaching</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/research/">Research</a></li>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/campus_life/">Campus Life</a></li>
+        </ul>
+        <ul>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/about_mq/">About MQ</a></li>
+          <li>&nbsp;<a href="http://staff.mq.edu.au/news_events/">News &amp; Events</a></li>
+        </ul>
+        <div class="break"></div>
+      </div>
+      <div class="footer-content">
+        <a href="https://mqedu.qualtrics.com/SE/?SID=SV_7OQJtldJhNXvbMx" class="btn-salient" target="_blank">
+          <i class="icon icon-clipboard"></i>Website feedback
+        </a>
+      </div>
+</div><!--/nav-footer-->
+
+
+
+
+
+		<div class="break"></div>
+		<div id="copyright">
+			<p class="left">&copy; Copyright Macquarie University | <a href="http://www.mq.edu.au/privacy.html">Privacy
+					Statement</a> | <a href="http://www.mq.edu.au/accessibility.html">Accessibility Information</a> | <a
+					href="http://handbook.mq.edu.au/2019/HandbookInformation/Disclaimer"  >Disclaimer</a><br/>
+				Site Publisher: Macquarie University, Sydney | Last
+				Updated: Monday, 27th August, 2018</p>
+			<!--change last updated date-->
+			<p class="left text-right">ABN 90 952 801 237 | CRICOS Provider No 00002J</p>
+
+			<div class="break"></div>
+		</div>
+		<!--/content_bottom--></div>
+	<!--/wrapper_bottom-->
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-4086645-4");
+			pageTracker._trackPageview();
+			pageTracker._trackPageLoadTime();
+		} catch (err) {
+		}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"43110574b8","applicationID":"37051082","transactionName":"NAcDMUAACBIEAEJbWg1NNBdbTkxODA1SV01NEgkV","queueTime":0,"applicationTime":819,"atts":"GEAARwgaGxw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,16 @@
+% rebase('base.html')
+
+<div class="productlist">
+    % for x in range(number):
+    %     for a in products[x]:
+    <div class="card product">
+        <h2><a class="card-title" href="/product/{{products[x][0][0]}}">{{products[x][0][1]}}</a></h2>
+
+        <div class="card-image"><img alt="{{products[x][0][1]}} image" src={{products[x][0][4]}}></div>
+
+        <div class="card-content inventory">{{products[x][0][6]}} in stock</div>
+
+        <div class="card-action">${{products[x][0][5]}}</div>
+    </div>
+% end
+</div>
