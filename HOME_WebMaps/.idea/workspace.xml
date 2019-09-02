@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91933f21-f9d5-48a4-b4a4-9902dacc0e47" name="Default Changelist" comment="" />
+    <list default="true" id="91933f21-f9d5-48a4-b4a4-9902dacc0e47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rough.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Abhijeet Roy &lt;abhijeetroy18@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1PU3e7mWRQLPczYsvZt0nROXbst" />
@@ -201,7 +209,18 @@
       <workItem from="1566090719011" duration="542000" />
       <workItem from="1566966016759" duration="451000" />
       <workItem from="1566966502139" duration="43000" />
+      <workItem from="1566966565983" duration="506000" />
+      <workItem from="1567076304322" duration="158000" />
+      <workItem from="1567417808386" duration="35000" />
     </task>
+    <task id="LOCAL-00001" summary="Changes">
+      <created>1566966904714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566966904715</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +238,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HOME_WebMaps$free_parking_fifteen_minutes.coverage" NAME="free_parking_fifteen_minutes Coverage Results" MODIFIED="1566019306719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parking_app" />
