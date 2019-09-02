@@ -3,7 +3,7 @@ from datetime import datetime as dt
 
 hosts_path_mac = r"/private/etc/hosts"  # use 'r' at the beginning when you write something like: \n
 hosts_path_win = r"C:\Windows\System32\drivers\etc\hosts"
-host_temp = "hosts"
+host_temp = "/Volumes/GoogleDrive/My Drive/Codes (Programming)/PycharmProjects/Home_WebsiteBlocker/hosts"
 
 redirect = "127.0.0.1"
 website_lists = ["www.facebook.com", "facebook.com"]
